@@ -6,9 +6,10 @@ newTaksButton.addEventListener("click", () => {
     if (inputText.value.trim() !== "") {
         const novaTask = document.createElement("li");
         novaTask.textContent = inputText.value;
-        tasklist.appendChild(novaTask);
+        lista.appendChild(novaTask);
+        inputText.value = "";
         console.log("Tarefa Adiciona!")
-    } else
+    } else {
         console.warn("O campo da tarefa nao pode estar vazio!");
-        
+    }; 
 });
