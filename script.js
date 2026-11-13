@@ -14,6 +14,14 @@ newTaksButton.addEventListener("click", () => {
         botaoDelete.className = "deleteTask";
         botaoDelete.textContent = "Excluir";
 
+        const tarefa = {
+            texto: inputText.value,
+            concluida: false
+        };
+        
+        tarefas.push(tarefa);
+        salvarTarefas();
+
         checkBox.addEventListener("change", () => {
             if (checkBox.checked) {
                 texto.classList.add("completed");
@@ -38,3 +46,14 @@ newTaksButton.addEventListener("click", () => {
     }; 
 });
 
+function salvarTarefas() {
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
+};
+
+function carregarTarefas() {
+    const dados = localStorage.getItem("tarefas");
+
+    if (dados !== null) {
+        tarefas = JSON.parse(dados);
+    }
+};
