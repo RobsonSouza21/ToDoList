@@ -1,6 +1,7 @@
 const inputText = document.querySelector("#inputTexto");
 const newTaksButton = document.querySelector(".newTask");
 const lista = document.querySelector("#tasklist");
+let tarefas = [];
 
 newTaksButton.addEventListener("click", () => {
     if (inputText.value.trim() !== "") {
