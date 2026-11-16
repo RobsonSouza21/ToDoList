@@ -23,16 +23,20 @@ newTaksButton.addEventListener("click", () => {
         salvarTarefas();
 
         checkBox.addEventListener("change", () => {
+            tarefa.concluida = checkBox.checked;
             if (checkBox.checked) {
                 texto.classList.add("completed");
                 console.log("Tarefa Concluida!")
             } else {
-                texto.classList.remove("completed")
+                texto.classList.remove("completed");
             };
+            salvarTarefas();
         });
 
         botaoDelete.addEventListener("click", () => {
             novaTask.remove();
+            tarefas = tarefas.filter(dados => dados !== tarefa);
+            salvarTarefas();
             console.log("Tarefa Removida!")
         });
 
